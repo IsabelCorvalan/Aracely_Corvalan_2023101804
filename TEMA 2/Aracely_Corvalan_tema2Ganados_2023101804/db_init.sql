@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS ganados_db;
+USE ganados_db;
+
+CREATE TABLE IF NOT EXISTS contactos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    celular VARCHAR(20) NOT NULL,
+    horario VARCHAR(50) NOT NULL,
+    creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
