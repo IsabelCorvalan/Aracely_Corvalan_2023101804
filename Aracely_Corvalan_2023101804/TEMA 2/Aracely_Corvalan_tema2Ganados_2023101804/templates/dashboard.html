@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Ganados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Venta de Ganados Vacunos</h1>
+    <div class="lotes">
+        {% for lote in lotes %}
+            <div class="lote">
+                <img src="{{ url_for('static', filename=lote.imagen) }}" alt="{{ lote.tipo }}">
+                <h2>{{ lote.tipo }}</h2>
+                <p>{{ lote.descripcion }}</p>
+                <p>Cantidad en lote: {{ lote.cantidad }}</p>
+                <p>Precio por unidad: ${{ lote.precio }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('contact') }}">Pedir más información</a>
+</body>
+</html>
